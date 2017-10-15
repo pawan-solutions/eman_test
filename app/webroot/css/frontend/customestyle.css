@@ -1,0 +1,209 @@
+@charset "utf-8";
+/* CSS Document */
+*{ margin:0px; padding:0px;}
+.clear{ clear:both;}
+body{ margin:0px; padding-top:76px; font-family:"Roboto", sans-serif; }
+header{ background-color:#fff; box-shadow:0px 0px 4px #666; position:fixed; top:0; z-index:5; width:100%;}
+.logo{ margin:0px; padding:0px; line-height:50px;}
+ul.navigation{ float:right;}
+ul.navigation li{ list-style:none; display:inline-block; text-transform:uppercase; padding:15px 20px;}
+ul.navigation li a{ text-decoration:none; color:#454545;}
+ul.navigation li a.active{ color:#01adef;}
+ul.rightNav{ width:100%; text-align:right;}
+ul.rightNav li{ list-style:none; display:inline-block; padding:5px 5px;}
+ul.rightNav li a{ text-decoration:none; color:#333;}
+ul.rightNav li a:hover{ color:#01adef}
+ul.navigation2{ float:left; margin-top:15px;}
+ul.navigation2 li{ list-style:none; display:inline-block;  padding:15px 12px;}
+ul.navigation2 li a{ text-decoration:none; color:#454545;}
+ul.navigation2 li a.active{ color:#01adef;}
+
+.applicationForm .form-control{ border-radius:0px; box-shadow:none; border:1px #ccc solid}
+.fcorn-login-2 {
+	font-family:"Roboto", sans-serif;width:420px;
+	background:#fff;
+	border:1px solid #eee;
+	letter-spacing:1px;
+	border-top: 2px #43bbec solid;
+	border-bottom: 2px #43bbec solid;
+	border-left:1px #ccc dashed;
+	border-right:1px #ccc dashed;
+	padding:40px 40px 25px;
+	float:right;
+	margin-top:50px;
+	border-radius:15px 
+	
+}
+.fcorn-login-2 span.icon, .fcorn-login-2 span.forget-pass {
+	display:block
+}
+.fcorn-login-2 span.icon {
+	position:relative;
+	overflow:hidden
+}
+.fcorn-login-2 span.icon:before {
+	position:absolute;
+	left:0;
+	line-height:1.428571429;
+	font-size:16px;
+	color:#43bbec;
+	padding:10px 15px
+}
+.fcorn-login-2 span.icon > input {
+	display:inline-block;
+	width:100%;
+	margin-bottom:15px;
+	border:none;
+	color:#686868;
+	border-bottom:1px solid rgba(159,159,159,0.2);
+	box-shadow:0 0 3px rgba(60,60,60,0.05);
+	padding:10px 15px 10px 55px
+}
+.fcorn-login-2 span.icon > input:focus {
+	border-bottom:1px solid #63c6ef;
+	outline:none
+}
+.fcorn-login-2 span.forget-pass > a {
+	float:left;
+	text-align:left;
+	font-weight:100;
+	width:100%;
+	font-size:12px;
+	text-decoration:underline;
+	color:#4cbeed
+}
+.fcorn-login-2 .login-btn > input, .fcorn-login-2 .signup-btn {
+	border:none;
+	width:128px;
+	display:inline-block;
+	color:#fff;
+	background:#43bbec;
+	box-shadow:0 1px 1px #169ed7;
+	text-align:center;
+	letter-spacing:1px;
+	margin-top:30px;
+	position:relative;
+	padding:8px 15px
+}
+.fcorn-login-2 .login-btn:before, .fcorn-login-2 .signup-btn:before {
+	position:absolute;
+	color:#43bbec;
+	font-family:entypo;
+	font-weight:100;
+	font-size:12px;
+	top:10px
+}
+.fcorn-login-2 .login-btn:before {
+	content:"\e024";
+	right:-38px;
+	top:40px
+}
+.fcorn-login-2 .signup-btn:before {
+	content:"\e071";
+	left:-38px
+}
+.fcorn-login-2 .signup-btn {
+	float:right
+}
+.fcorn-login-2 .signup-btn:hover, .fcorn-login-2 .signup-btn:focus {
+	text-decoration:none
+}
+.headingMain{ font-size:30px; font-weight:600;}
+.headingMain span{ color:#43bbec; font-weight:300;}
+.content{ font-family:"Roboto", sans-serif;line-height:26px; color:#666; font-size:18px; font-weight:500;}
+.landingImg{ margin:30px 0px;}
+.signupbox{ width:60%; margin:50px auto; 
+	border-top: 2px #43bbec solid;
+	border-bottom: 2px #43bbec solid;
+	border-left:1px #ccc dashed;
+	border-right:1px #ccc dashed;
+	padding:30px 40px 25px; background-color:#fff;
+	border-radius:25px;  font-family:"Roboto", sans-serif;}
+.signupbox .heading1{ text-align:center; font-family:"Roboto", sans-serif;font-size:30px; }
+.signupformbox{ width:60%; margin:25px auto 15px; background-color:#f2f2f2; border:1px #ccc dotted; border-radius:5px; padding:10px 20px 20px;}
+
+.signupformbox h3{ text-align:center; background-color:#43bbec; color:#fff; text-align:center; line-height:35px; border-radius:20px; margin:10px auto; width:80%; font-size:20px; font-family:"Roboto", sans-serif;font-weight:600; }
+.loginboxouter{
+	width:400px;
+	 margin:100px auto; 
+	border-top: 2px #43bbec solid;
+	border-bottom: 2px #43bbec solid;
+	border-left:1px #ccc dashed;
+	border-right:1px #ccc dashed;
+	background-color:#fff;
+	border-radius:25px;}
+	
+.loginhead{ text-align:center; margin-bottom:20px; border-bottom:1px #ccc dashed; padding:12px 0px;}
+
+.loginboxouter form{padding:10px 40px 25px;  font-family:"Roboto", sans-serif;}
+.loginboxouter form input.form-control{ border-radius:0px; box-shadow:none; border:1px #ccc solid}
+.btn.btn_login{ background-color:#43bbec; color:#fff; width:100px; text-align:center; margin:0 auto;  font-family:"Roboto", sans-serif;font-weight:600;}
+.loginboxouter form p{ line-height:25px; text-align:right}
+.btn.btn_login:hover{ color:#fff;}
+
+/*Searchbox*/
+.stylish-input-group .input-group-addon{
+    background: white !important; 
+	}
+.stylish-input-group .form-control{
+	border-right:0; 
+	box-shadow:0 0 0; 
+	border-color:#ccc;
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
+}
+.input-group.stylish-input-group{ margin-bottom:10px;}
+.smallHeading1{font-family:"Roboto", sans-serif; padding-top:30px; width:50%; float:left; font-weight:600; color:#454545; font-size:15px;}
+.smallHeading1 span{ color:#43bbec; font-size:12px; font-weight:300;}
+ul.border-box{ font-family:"Roboto", sans-serif;  margin:15px 0px 20px 0px; padding:5px 10px;background-color:#fff;  }
+ul.border-box li{ list-style:none; display:inline-block; min-width:20%; font-size:15px; line-height:25px;}
+ul.border-box li.active{ font-weight:600;}
+
+/*Application Form*/
+
+.applicationForm{
+	font-family:"Roboto", sans-serif;
+	}
+.applicationForm h2{ font-size:18px;     margin: 0px 0px 20px;}	
+.applicationForm h2 span{ font-size:12px; color:#43bbec;}
+ul.applicationType{ margin:0px; padding:0px; font-weight:400;}
+ul.applicationType li{ list-style:none; display:block; padding:4px 0px; font-size:15px;}
+ul.applicationType li.active{ font-weight:600;}
+
+.btn.btn-theme{ background-color:#43bbec; color:#fff; border:1px #fff solid;}
+.btn.btn-theme:hover{ background-color:#34a1ce; color:#fff;}
+
+
+/* start Added by pawan kumar */
+.btn.btn-file{ background-color:#898484; color:#fff; border:1px #fff solid;}
+.btn.btn-file-green{ background-color:#5FBA7D; color:#fff; border:1px #fff solid;}
+.btn.btn-file:hover{ background-color:#898484; color:#fff;}
+
+.error-message {color: #f58733;}
+.form-error{
+    order: 2px solid #f58733 !important;
+    box-shadow: 0 0 10px #f58733 !important;
+    }
+/* end Added by pawan kumar */
+
+.message {
+    background-color: #f58733;
+    border: 1px solid #f37515;
+    border-radius: 4px;
+    clear: both;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0 auto 20px;
+    max-width: 1150px;
+    padding: 6px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+
+
+
+

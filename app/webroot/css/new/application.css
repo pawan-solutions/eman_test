@@ -1,0 +1,223 @@
+    .app-process{
+        height: 110px;
+        margin: 10px 10px 10px 10px;
+        padding-left: 33px;
+        background-color: #f5f5f5;
+    }
+    .process-name{
+        width: 200px;
+        position: absolute;
+        height: 100px;
+        padding: 10px 0px 10px 10px;;
+    }
+    .process-type{
+        height: 100px;
+        margin-left:275px;
+        padding-top: 10px;
+    }
+
+    .process-type ul{
+        list-style-type: none;
+    }
+.process-button-cyan{
+    display: inline-block;
+    background-color: #1EB7F0;
+    font-size: 15px;
+    width: 125px;
+    height: 90px;
+    padding-left: 5px;
+    border-radius: 20px;
+    margin-right: 4px;
+
+}
+
+.process-button-green{
+    display: inline-block;
+    background-color: #55F290;
+    font-size: 15px;
+    width: 125px;
+    height: 90px;
+    padding-left: 5px;
+    border-radius: 20px;
+     margin-right: 4px;
+}
+
+.process-button-red{
+    display: inline-block;
+    background-color: #F89E35;
+    font-size: 15px;
+    width: 125px;
+    height: 90px;
+    padding-left: 5px;
+    border-radius: 20px;
+     margin-right: 4px;
+}
+
+.process-button-yellow{
+    display: inline-block;
+    background-color: yellow;
+    font-size: 15px;
+    width: 125px;
+    height: 90px;
+    padding-left: 5px;
+    border-radius: 20px;
+     margin-right: 4px;
+}
+.process-button-grey{
+    display: inline-block;
+    background-color: #777777;
+    font-size: 15px;
+    width: 125px;
+    height: 90px;
+    padding-left: 5px;
+    border-radius: 20px;
+     margin-right: 4px;
+}
+
+.img-question{
+    padding-left: 5px;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+
+    
+}
+.button-txt{
+    position: absolute;
+    color: #fff;
+    //text-align:center;
+    width: 114px;
+    padding-left: 5px;
+}
+.process-button1{
+   // position: absolute;
+   // display: inline-block;
+    font-size: 16px;
+   // width: 250px;
+    height: 90px;
+    padding-left: 250px;
+    padding-top: 23px;
+    text-align: center;
+   // float: right;
+}
+.process-chkbox-class{
+    margin-left: 70px;
+    cursor: pointer;
+}
+.prev{cursor: pointer;}
+.next{cursor: pointer;}
+
+.arrow-bold{
+    font-size: 25px;
+    color: blue;
+    font-weight: bold;
+    position: absolute;
+}
+
+.arrow-bold-number{
+    font-size: 25px;
+    color: blue;
+    font-weight: bold;
+    position: absolute;
+}
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+}
+
+/* The Close Button */
+.close {
+    color: #000;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.search_section{
+        height: 40px;
+        margin: 10px 10px 10px 10px;
+        background-color: #f5f5f5;
+  
+}
+
+.app_reference_date{
+    margin-top:47px; text-align:center; 
+    font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; 
+    color:white; font-size:12px;
+}
+
+
+.next1{cursor: pointer;}
+.prev1{cursor: pointer; }
+.close1{margin-bottom: 50px;}
+
+
+#pgBox {
+    text-align: center;
+    padding-top: 10px;
+}
+
+#paging {
+    border: 1px solid #fff;
+    box-shadow: 0 0 0 10px rgba(150, 150, 150, 0.1), 0 1px 3px rgba(25, 25, 25, 0.3), 0 10px 15px rgba(200, 200, 200, 0.1) inset;
+    display: inline-block;
+    font-size: 14px;
+    max-width: 900px;
+    padding: 5px;
+    text-align: center;
+    width: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#paging .current {
+    background-color: #949494;
+    border: 1px solid #777676;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 4px 10px;
+    text-decoration: none;
+}
+
+
+
+#paging span {
+    
+    border: 1px solid #777676;
+    border-radius: 3px;
+    color: #777676;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 4px 10px;
+    text-decoration: none;
+    margin-right: 5px;
+
+}

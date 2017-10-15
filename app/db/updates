@@ -1,0 +1,131 @@
+ALTER TABLE `applications` ADD `process_status` INT(2) NULL DEFAULT '1' COMMENT 'this will update 1 to 7' AFTER `address_outside`;
+
+ALTER TABLE `users` ADD `owner_id` INT NOT NULL AFTER `id`;
+
+ALTER TABLE `applications` ADD `created_by` INT NOT NULL AFTER `process_status`;
+
+ALTER TABLE `applications` CHANGE `process_status` `process_status` INT(2) NULL DEFAULT NULL COMMENT 'this will update 1 to 7';
+
+ALTER TABLE `application_processes` ADD `comment` VARCHAR(255) NOT NULL AFTER `supporting_document`;
+
+ALTER TABLE `application_processes` ADD `issues` VARCHAR(255) NOT NULL AFTER `supporting_document`;
+
+ALTER TABLE `application_processes` ADD `user_id` INT NOT NULL AFTER `id`;
+
+ALTER TABLE `applications` ADD `process_issue` VARCHAR(100) NOT NULL AFTER `process_status`;
+
+---2/11/2016-----
+ALTER TABLE `applications` ADD `expiry_date` DATE NOT NULL AFTER `process_issue`;
+ALTER TABLE `applications` CHANGE `expiry_date` `expiry_date` VARCHAR(30) NOT NULL;
+
+ALTER TABLE `application_details` ADD `remark` VARCHAR(255) NOT NULL AFTER `other`;
+
+
+ALTER TABLE `applications` CHANGE `process_status` `process_status` VARCHAR(150) NULL DEFAULT NULL COMMENT 'this will update 1 to 7', CHANGE `process_issue` `process_issue` VARCHAR(150) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL;
+
+
+ALTER TABLE `applications` ADD `process_closed` INT(1) NOT NULL DEFAULT '0' COMMENT '0=>in process, 1=>process closed' AFTER `process_issue`;
+
+=======18/12/2016=========
+ALTER TABLE `application_details` ADD `emp_passport2` VARCHAR(255) NOT NULL AFTER `emp_passport1`, ADD `emp_passport3` VARCHAR(255) NOT NULL AFTER `emp_passport2`;
+
+=======28/12/2016==========
+ALTER TABLE `application_details` ADD `emirates_id` VARCHAR(255) NOT NULL AFTER `establishment_card`, ADD `medical_certificate` VARCHAR(255) NOT NULL AFTER `emirates_id`, ADD `health_insurence` VARCHAR(255) NOT NULL AFTER `medical_certificate`;
+
+=======31/12/2016==========
+ALTER TABLE `application_details` ADD `emirates_id_back` VARCHAR(200) NOT NULL AFTER `emirates_id`;
+
+========26/1/2016=============
+ALTER TABLE `users` ADD `phone` VARCHAR(25) NOT NULL AFTER `last_name`;
+
+========17/2/2016==========
+CREATE TABLE IF NOT EXISTS  `notifications` (
+ `id` INT( 11 ) NOT NULL ,
+ `owner_id` INT( 11 ) NOT NULL ,
+ `application_id` INT( 11 ) NOT NULL ,
+ `type` INT( 11 ) DEFAULT NULL COMMENT  '1=>new application, 2=>application issue, 3=>issue solved',
+ `read` TINYINT( 4 ) DEFAULT  '0' COMMENT  '0=>unread, 1=>read',
+ `created_date` DATETIME DEFAULT NULL ,
+ `modified_by` INT( 11 ) NULL
+) ENGINE = INNODB AUTO_INCREMENT =7 DEFAULT CHARSET = latin1
+
+=============3/1/2017===============
+ALTER TABLE `applications` ADD `process_status_next` INT(2) NOT NULL DEFAULT '1' COMMENT 'inserting next process to be done' AFTER `process_status`;
+
+ALTER TABLE `applications` ADD `next_typing` INT(2) NOT NULL DEFAULT '1' AFTER `process_issue`;
+
+=======5/3/17========
+ALTER TABLE `notifications` CHANGE `modified_by` `created_by` INT NULL DEFAULT NULL;
+ALTER TABLE `notifications` ADD `process_type` INT NULL DEFAULT NULL COMMENT '1=>new, 2=>renew, 3=>local transfer, 4=>cancellation' AFTER `type`;
+ALTER TABLE `notifications` ADD `process_stage` INT NULL DEFAULT NULL COMMENT 'when visa process completed' AFTER `process_type`;
+
+=======1/4/17========
+ALTER TABLE `companies` ADD `trade_license_expiry` DATE NULL DEFAULT NULL AFTER `company_type`, ADD `immigration_expiry` DATE NULL DEFAULT NULL AFTER `trade_license_expiry`;
+ALTER TABLE `companies` CHANGE `trade_license_expiry` `trade_license_expiry` VARCHAR(50) NULL DEFAULT NULL, CHANGE `immigration_expiry` `immigration_expiry` VARCHAR(50) NULL DEFAULT NULL;
+
+=======5/4/17========
+ALTER TABLE `applications` ADD `employee_id_number` VARCHAR(50) NULL DEFAULT NULL AFTER `company_id`;
+
+=======21/4/17========
+ALTER TABLE `application_issues` ADD `supporting_document` TEXT NULL DEFAULT NULL AFTER `comment`;
+ALTER TABLE `application_issues` ADD `modified_date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP AFTER `created_date`;
+
+ALTER TABLE `application_details` ADD `visit_visa_copy` VARCHAR(50) NULL AFTER `visa_form`;
+ALTER TABLE `application_details` ADD `residency_copy` VARCHAR(50) NULL AFTER `visit_visa_copy`;
+
+=========14/5/17==========
+ALTER TABLE `companies` ADD `representative_name` VARCHAR(100) NULL AFTER `company_type`, ADD `representative_mobile` VARCHAR(15) NULL AFTER `representative_name`, ADD `remark` VARCHAR(255) NULL AFTER `representative_mobile`;
+
+=========28/5/17==========
+ALTER TABLE `company_logs` ADD `representative_name` VARCHAR(100) NULL DEFAULT NULL AFTER `company_type`, ADD `representative_mobile` VARCHAR(15) NULL DEFAULT NULL AFTER `representative_name`;
+
+ALTER TABLE `company_logs` ADD `company_id` INT NOT NULL AFTER `user_id`;
+
+=========25/6/17==========
+ALTER TABLE `applications` ADD `barcode` VARCHAR(20) NULL AFTER `company_id`;
+
+
+CREATE TABLE IF NOT EXISTS `passport_trackings` (
+  `id` int(11) NOT NULL,
+  `barcode` varchar(20) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `user_type` int(2) DEFAULT NULL,
+  `process_type` int(2) DEFAULT NULL,
+  `created_by` int(11) NOT NULL,
+  `created_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE IF NOT EXISTS `passport_massagers` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `dispatch_to` varchar(50) DEFAULT NULL,
+  `massager_name` varchar(50) DEFAULT NULL,
+  `passport_tracking_ids` varchar(100) DEFAULT NULL,
+  `barcodes` varchar(255) DEFAULT NULL,
+  `created_by` int(11) DEFAULT NULL,
+  `created_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+=========28/7/17==========
+ALTER TABLE `passport_trackings` ADD `application_id` INT NOT NULL AFTER `id`;
+
+=========2/9/17==========
+ALTER TABLE `application_issues` ADD `issue_solved` BOOLEAN NOT NULL DEFAULT FALSE AFTER `supporting_document`;
+
+========8/10/2017=========
+ALTER TABLE `applications` ADD `basic_salary` VARCHAR(10) NULL DEFAULT NULL AFTER `address_outside`, ADD `housing_allowance` VARCHAR(10) NULL DEFAULT NULL AFTER `basic_salary`, ADD `transportation_allowance` VARCHAR(10) NULL DEFAULT NULL AFTER `housing_allowance`, ADD `other_allowance` VARCHAR(10) NULL DEFAULT NULL AFTER `transportation_allowance`;
+
+ALTER TABLE `application_details` ADD `labour_card` VARCHAR(255) NOT NULL AFTER `residency_copy`;
+
+ALTER TABLE `applications` ADD `gender` VARCHAR(10) NULL DEFAULT NULL AFTER `employee_name`;
+
+
+
+
+
+
+
+
+
+

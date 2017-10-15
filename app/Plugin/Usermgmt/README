@@ -1,0 +1,113 @@
+UserMgmt is a User Management Plugin for cakephp 2.x
+Plugin Premium version 1.1 (stable)
+
+Main Features- in 1.0 Version
+1. Clean code with formatting
+2. Login
+3. Registration
+4. Cookie login/ Remember me functionality
+5. Add/Edit/Delete User By Admin
+6. Add/Edit/Delete Group By Admin
+7. Change Password
+8. Forgot Password
+9. Change User Password by Admin
+10. List of all Users
+11. List of all Groups
+12. Manage site Permissions using Ajax updation, Permission caching functionality for fast checking
+13. User's Email Verification
+14. User Profile View
+15. User activation by Admin
+16. Routing long urls to small urls
+17. Login with Facebook, Twitter, Linkedin, Four Square, Gmail, Yahoo.
+18. Plugin takes the image from facebook, linkedin, twitter and updates as profile image
+19. If a user sign in with facebook etc for the first time then plugin automatically register him/her, If a user is already registered with same email then plugin will associate old account with facebook etc. So there will be no duplicacy.
+20. All Configurations are database driven.
+21. View Online users and guest
+22. Admin can sign out any user at any time and Admin also can inactive that user so that user cannot sign in again
+23. Deleting cakephp cache in a single click on production
+24. Captcha support in registration form
+25. CSRF/XSS protection
+26. Nice pagination for list
+27. SSL support for selected pages or whole site
+28. Profile view with nice design
+29. password are salted with hash
+30. Cross broswer CSS opimized code
+31. Strict form validations
+32. Allow/Disallow deletion of user account
+33. If admin deletes user account then user will automatically sign out(if signed in)
+34. Image resize helper: using this you can resize image or can crop with desired size
+
+Added in 1.1 version (How to upgrade to 1.1 version see below the this file)
+
+35. Cake CSS removed now umstyle.css contains plugin css. You can use cake generic css with this plugin if you want.
+36. Ajax Form Validations
+37. Ajax Form Validations with File/Image (Hope you will like it)
+38. Ajax Pagination
+39. Ajax Sorting on all List pages
+40. Ajax Search/Filter Options on List Pages
+41. Ajax Suggestion/Autocomplete on Search/Filter text boxes
+42. User Activation/Deactivation by Ajax
+43. User Deletion by Ajax
+44. User Email Verification by Ajax
+45. Image Validation with allow Empty (Hope you will like it)
+46. Preserve pagination number after user View/Edit/Change User Password
+47. Assign user to multiple groups By Admin
+48. $var is avilable in all views. It contains looged in user information you can print it in any view file to see what's inside it.
+
+DOCUMENTATION
+
+We are working on documentation of this plugin as soon as it is prepared I will inform you.
+
+
+INSTALLATION
+------------
+
+1. Go to yourapp/app/Plugin
+	extract here
+	name it Usermgmt
+
+2. Schema import (use your favorite sql tool to import the schema)
+
+	yourapp/app/Plugin/Usermgmt/Config/Schema/usermgmt-1.1.sql
+
+3. Configure your AppController class
+
+        Your yourapp/app/Controller/AppController.php should look like this:
+
+<?php
+	class AppController extends Controller {
+		var $helpers = array('Form', 'Html', 'Session', 'Js', 'Usermgmt.UserAuth', 'Usermgmt.Image');
+		public $components = array('Session','RequestHandler', 'Usermgmt.UserAuth');
+		function beforeFilter(){
+			$this->userAuth();
+		}
+		private function userAuth(){
+			$this->UserAuth->beforeFilter($this);
+		}
+	}
+?>
+4. (Optional)
+	This plugin is CSRF protection enabled and If you want to use CSRF in rest Application just use Security component
+	for ex. $components in Your yourapp/app/Controller/AppController.php should look like this:
+	public $components = array('Session','RequestHandler', 'Usermgmt.UserAuth', 'Security');
+
+5. Enable Plugin in your bootstrap.php
+
+        yourapp/app/Config/bootstrap.php should include this line
+
+        // load Usermgmt plugin and apply plugin routes. Keep all the other plugins you are using here
+        CakePlugin::loadAll(array(
+            'Usermgmt' => array('routes' => true, 'bootstrap' => true),
+        ));
+
+6. Add plugin css in your layout file
+    for example yourapp/app/View/Layouts/default.ctp
+    echo $this->Html->css('/usermgmt/css/umstyle');
+    
+    Please note: I have removed cake.generic.css from umstyle.css in 1.1 version, Now it's your wish you can use cake.generic.css separatly. If you want to use cake.generic.css then you should load it before plugin css.
+    
+7. Default user name password 
+username- admin
+password- 123456
+
+ALL DONE !

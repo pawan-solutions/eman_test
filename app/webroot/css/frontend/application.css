@@ -1,0 +1,160 @@
+    .app-process{
+        height: 110px;
+        margin: 10px 0px 10px 0px;
+        background-color: #fff;
+    }
+    .process-name{
+        width: 200px;
+        position: absolute;
+        height: 100px;
+        padding: 10px 0px 10px 10px;;
+    }
+    .process-type{
+        height: 100px;
+        margin-left:300px;
+        padding-top: 10px;
+    }
+
+    .process-type ul{
+        list-style-type: none;
+    }
+.process-button-cyan{
+    display: inline-block;
+    background-color: #1EB7F0;
+    font-size: 15px;
+    width: 115px;
+    height: 90px;
+    padding-left: 5px;
+    border-radius: 20px;
+}
+
+.process-button-green{
+    display: inline-block;
+    background-color: #55F290;
+    font-size: 15px;
+    width: 115px;
+    height: 90px;
+    padding-left: 5px;
+    border-radius: 20px;
+}
+
+.process-button-red{
+    display: inline-block;
+    background-color: #F89E35;
+    font-size: 15px;
+    width: 115px;
+    height: 90px;
+    padding-left: 5px;
+    border-radius: 20px;
+}
+
+.process-button-yellow{
+    display: inline-block;
+    background-color: yellow;
+    font-size: 15px;
+    width: 115px;
+    height: 90px;
+    padding-left: 5px;
+    border-radius: 20px;
+}
+.process-button-grey{
+    display: inline-block;
+    background-color: #777777;
+    font-size: 15px;
+    width: 115px;
+    height: 90px;
+    padding-left: 5px;
+    border-radius: 20px;
+}
+
+.img-question{
+    padding-left: 5px;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+
+    
+}
+.button-txt{
+    position: absolute;
+    color: #fff;
+    //text-align:center;
+    width: 100px;
+    padding-left: 5px;
+}
+.process-button1{
+   // position: absolute;
+   // display: inline-block;
+    font-size: 16px;
+   // width: 250px;
+    height: 90px;
+    padding-left: 180px;
+    padding-top: 23px;
+    text-align: center;
+   // float: right;
+}
+.process-chkbox-class{
+    margin-left: 70px;
+}
+.prev{cursor: pointer;}
+.next{cursor: pointer;}
+
+.arrow-bold{
+    font-size: 25px;
+    color: blue;
+    font-weight: bold;
+    position: absolute;
+}
+
+.arrow-bold-number{
+    font-size: 25px;
+    color: blue;
+    font-weight: bold;
+    position: absolute;
+}
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+}
+
+/* The Close Button */
+.close {
+    color: #000;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.search_section{
+        height: 40px;
+        margin: 10px 10px 10px 10px;
+        background-color: #fff;
+  
+}
+
