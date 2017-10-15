@@ -8,7 +8,7 @@ class ApplicationsController  extends AppController {
     public $paginate = array();  
 
     public function image_uploading($req_data, $image_for)
-    {
+    { 
         $file_path = WWW_ROOT.IMAGES_URL."applications/".$image_for;
         if(!is_dir($file_path))
         {
